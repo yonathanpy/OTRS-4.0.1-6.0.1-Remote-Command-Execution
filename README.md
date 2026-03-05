@@ -102,6 +102,7 @@ The exploit requires:
 Install dependencies:
 
 ```bash
+
 pip3 install requests
 
 Usage
@@ -196,13 +197,4 @@ Always obtain explicit permission before testing security vulnerabilities.
 ⭐ If you find this project useful, consider giving it a star.
 
 
----
-
-✅ If you want, I can also show you **3 things that will instantly make your repo look 10x more professional:**
-
-- add **exploit screenshots**
-- add **CLI arguments (`-h`) section**
-- add **GitHub security researcher style badges + exploit demo**
-
-Your repo will look like **top exploit repos on GitHub**, not “lame”.
-::contentReference[oaicite:2]{index=2}
+----
